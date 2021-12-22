@@ -38,7 +38,8 @@ class ApiConnector {
   }
 
   async getPinMsg(pinMsg) {
-    const response = await fetch(`${this.url} ? event=getPinMsg`);
+    // const response = await fetch(`${this.url} ? event=getPinMsg`);
+    const response = await fetch(this.url);
     const msg = await response.json();
     if (msg) {
       const message = new Message(msg.type, msg.msg, msg.typeFile);
@@ -128,8 +129,8 @@ class ApiConnector {
   }
 }
 
-//const url = 'https://ahj-diplom-1.herokuapp.com/';
+ const url = 'https://ahj-diplom-1.herokuapp.com/';
 // const url = '/api/';
- const url = 'http://localhost:8080';
+//const url = 'http://localhost:7071';
 const api = new ApiConnector(url);
 export default api;
