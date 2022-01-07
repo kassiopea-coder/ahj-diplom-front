@@ -39,7 +39,6 @@ class ApiConnector {
 
   async getPinMsg(pinMsg) {
     const response = await fetch(`${this.url}?event=getPinMsg`);
-    // const response = await fetch(this.url);
     const msg = await response.json();
     if (msg) {
       const message = new Message(msg.type, msg.msg, msg.typeFile);
