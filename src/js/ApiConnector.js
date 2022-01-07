@@ -23,7 +23,7 @@ class ApiConnector {
     if (id) {
       URL += `?id=${id}`; // Передаем id первого сообщения в списке.
     }
-    const response = await fetch(URL);
+    // const response = await fetch(URL);
     const messagesList = Array.from(await response.json());
     messagesList.forEach((msg) => {
       const message = new Message(msg.type, msg.msg, msg.typeFile, msg.extFile);
@@ -38,7 +38,7 @@ class ApiConnector {
   }
 
   async getPinMsg(pinMsg) {
-    const response = await fetch(`${this.url}?event=getPinMsg`);
+    // const response = await fetch(`${this.url}?event=getPinMsg`);
     const msg = await response.json();
     if (msg) {
       const message = new Message(msg.type, msg.msg, msg.typeFile);
